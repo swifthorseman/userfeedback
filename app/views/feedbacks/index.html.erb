@@ -11,7 +11,7 @@
 
   <tbody>
     <% @feedbacks.each do |feedback| %>
-      <tr>
+      <tr id="<%= dom_id(feedback) %>">
         <td><%= feedback.summary %></td>
         <td><%= feedback.comment %></td>
         <td><%= link_to 'Show', feedback %></td>
