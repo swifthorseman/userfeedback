@@ -3,6 +3,7 @@
 <table>
   <thead>
     <tr>
+      <th>Summary</th>
       <th>Comment</th>
       <th colspan="3"></th>
     </tr>
@@ -11,6 +12,7 @@
   <tbody>
     <% @feedbacks.each do |feedback| %>
       <tr>
+        <td><%= feedback.summary %></td>
         <td><%= feedback.comment %></td>
         <td><%= link_to 'Show', feedback %></td>
         <td><%= link_to 'Edit', edit_feedback_path(feedback) %></td>
