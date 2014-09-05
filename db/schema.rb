@@ -11,12 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140905124614) do
+ActiveRecord::Schema.define(version: 20140905140908) do
 
   create_table "feedbacks", force: true do |t|
-    t.string   "comment"
+    t.text     "comment",    limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
+    t.string   "summary"
   end
+
+  add_index "feedbacks", ["user_id"], name: "index_feedbacks_on_user_id"
 
 end
